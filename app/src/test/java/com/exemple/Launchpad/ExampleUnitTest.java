@@ -1,4 +1,4 @@
-package com.exemple.logtimer;
+package com.exemple.Launchpad;
 
 import org.junit.Test;
 
