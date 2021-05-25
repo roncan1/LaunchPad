@@ -28,7 +28,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:soundEffectsEnabled="false"/>
+            android:soundEffectsEnabled="false" />
 
         <Button
             android:id="@+id/Button_guitar"
