@@ -7,31 +7,38 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button_drum, button_piano, button_guitar, button_1, button_2, button_3,
-    button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12;
+    ImageButton button_drum, button_piano, button_guitar, button_1, button_2, button_3,
+            button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12,
+            button_13, button_14, button_15;
     String select = "drum"; // 악기 선택 변수
+    int sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,
+            sound13, sound14, sound15;
     SoundPool soundPool;
-    int sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12;
+    private Boolean easter_a = false, easter_b = false, easter_c = false, easter_d = false, easter_e = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button_drum = (Button)findViewById(R.id.Button_drum);
-        button_piano = (Button)findViewById(R.id.Button_piano);
-        button_guitar = (Button)findViewById(R.id.Button_guitar);
-        button_1 = (Button)findViewById(R.id.button_1); button_2 = (Button)findViewById(R.id.button_2);
-        button_3 = (Button)findViewById(R.id.button_3); button_4 = (Button)findViewById(R.id.button_4);
-        button_5 = (Button)findViewById(R.id.button_5); button_6 = (Button)findViewById(R.id.button_6);
-        button_7 = (Button)findViewById(R.id.button_7); button_8 = (Button)findViewById(R.id.button_8);
-        button_9 = (Button)findViewById(R.id.button_9); button_10 = (Button)findViewById(R.id.button_10);
-        button_11 = (Button)findViewById(R.id.button_11); button_12 = (Button)findViewById(R.id.button_12);
-
+        button_drum = (ImageButton)findViewById(R.id.Button_drum);
+        button_piano = (ImageButton)findViewById(R.id.Button_piano);
+        button_guitar = (ImageButton)findViewById(R.id.Button_guitar);
+        button_1 = (ImageButton)findViewById(R.id.button_1); button_2 = (ImageButton)findViewById(R.id.button_2);
+        button_3 = (ImageButton)findViewById(R.id.button_3); button_4 = (ImageButton)findViewById(R.id.button_4);
+        button_5 = (ImageButton)findViewById(R.id.button_5); button_6 = (ImageButton)findViewById(R.id.button_6);
+        button_7 = (ImageButton)findViewById(R.id.button_7); button_8 = (ImageButton)findViewById(R.id.button_8);
+        button_9 = (ImageButton)findViewById(R.id.button_9); button_10 = (ImageButton)findViewById(R.id.button_10);
+        button_11 = (ImageButton)findViewById(R.id.button_11); button_12 = (ImageButton)findViewById(R.id.button_12);
+        button_13 = (ImageButton)findViewById(R.id.button_13); button_14 = (ImageButton)findViewById(R.id.button_14);
+        button_15 = (ImageButton)findViewById(R.id.button_15);
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
+
         button_drum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,9 +130,29 @@ public class MainActivity extends AppCompatActivity {
                 soundPool.play(sound12,1f,1f,0,0,1f);
             }
         });
+        button_13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundPool.play(sound13,1f,1f,0,0,1f);
+            }
+        });
+        button_14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundPool.play(sound14,1f,1f,0,0,1f);
+            }
+        });
+        button_15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                soundPool.play(sound15,1f,1f,0,0,1f);
+            }
+        });
 
 
     }
+
+
 
     private void cate_set(String select) {
         switch (select) {
@@ -152,6 +179,26 @@ public class MainActivity extends AppCompatActivity {
                 sound10 = soundPool.load(this, R.raw.guitar_f1, 0);
                 sound11 = soundPool.load(this, R.raw.guitar_f2, 0);
                 sound12 = soundPool.load(this, R.raw.guitar_g, 0);
+                sound13 = soundPool.load(this, R.raw.guitar_hit, 0);
+                sound14 = soundPool.load(this, R.raw.guitar_slide, 0);
+                sound15 = soundPool.load(this, R.raw.guitar_da_ra_ra, 0);
+                break;
+            case "piano":
+                sound1 = soundPool.load(this, R.raw.piano_d3, 0);
+                sound2 = soundPool.load(this, R.raw.piano_d4, 0);
+                sound3 = soundPool.load(this, R.raw.piano_e3, 0);
+                sound4 = soundPool.load(this, R.raw.piano_g2, 0);
+                sound5 = soundPool.load(this, R.raw.piano_g3, 0);
+                sound6 = soundPool.load(this, R.raw.piano_a2, 0);
+                sound7 = soundPool.load(this, R.raw.piano_a3, 0);
+                sound8 = soundPool.load(this, R.raw.piano_b2, 0);
+                sound9 = soundPool.load(this, R.raw.piano_b3, 0);
+                sound10 = soundPool.load(this, R.raw.piano_b3sharp, 0);
+                sound11 = soundPool.load(this, R.raw.piano_do, 0);
+                sound12 = soundPool.load(this, R.raw.piano_rae, 0);
+                sound13 = soundPool.load(this, R.raw.piano_mi, 0);
+                sound14 = soundPool.load(this, R.raw.piano_pha, 0);
+                sound15 = soundPool.load(this, R.raw.piano_sol, 0);
                 break;
 
         }

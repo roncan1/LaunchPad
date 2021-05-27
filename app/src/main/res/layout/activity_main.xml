@@ -1,153 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back"
     tools:context=".MainActivity">
 
+
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:gravity="center">
 
-        <Button
+        <ImageButton
             android:id="@+id/Button_drum"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:soundEffectsEnabled="false"/>
-
-        <Button
-            android:id="@+id/Button_piano"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/selector_drum"
             android:soundEffectsEnabled="false" />
 
-        <Button
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"/>
+
+        <ImageButton
+            android:id="@+id/Button_piano"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/selector_piano"
+            android:soundEffectsEnabled="false" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"/>
+
+        <ImageButton
             android:id="@+id/Button_guitar"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:soundEffectsEnabled="false"/>
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/selector_guitar"
+            android:layout_marginRight="165dp"
+            android:soundEffectsEnabled="false" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="52dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_1"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_orange"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_2"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_3"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_purple"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_4"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_yellow"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
+                android:id="@+id/button_13"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_green"
+                android:soundEffectsEnabled="false" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_5"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+
+                android:layout_weight="1"
+                android:background="@drawable/selector_orange"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_6"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_7"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_purple"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_8"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_yellow"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
+                android:id="@+id/button_14"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_green"
+                android:soundEffectsEnabled="false" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button_9"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_orange"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_10"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_11"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:soundEffectsEnabled="false"/>
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/selector_purple"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
                 android:id="@+id/button_12"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:soundEffectsEnabled="false"/>
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_yellow"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
+                android:id="@+id/button_15"
+                android:layout_width="180dp"
+                android:layout_height="165dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_green"
+                android:soundEffectsEnabled="false" />
 
         </LinearLayout>
     </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageButton
+                android:id="@+id/Button_left"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/selector_up"
+                android:soundEffectsEnabled="false" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/Button_right"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/selector_down"
+                android:soundEffectsEnabled="false" />
+
+            <ImageButton
+                android:id="@+id/Button_up"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/selector_left"
+                android:soundEffectsEnabled="false" />
+            <ImageButton
+                android:id="@+id/Button_down"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/selector_right"
+                android:soundEffectsEnabled="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
