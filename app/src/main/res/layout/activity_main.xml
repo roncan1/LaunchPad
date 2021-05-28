@@ -249,7 +249,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/Button_left"
+                android:id="@+id/Button_up"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginLeft="10dp"
@@ -258,7 +258,7 @@
                 android:soundEffectsEnabled="false" />
 
             <ImageButton
-                android:id="@+id/Button_right"
+                android:id="@+id/Button_down"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginLeft="10dp"
@@ -269,7 +269,7 @@
                 android:soundEffectsEnabled="false" />
 
             <ImageButton
-                android:id="@+id/Button_up"
+                android:id="@+id/Button_left"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginLeft="10dp"
@@ -279,7 +279,7 @@
                 android:background="@drawable/selector_left"
                 android:soundEffectsEnabled="false" />
             <ImageButton
-                android:id="@+id/Button_down"
+                android:id="@+id/Button_right"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginLeft="10dp"

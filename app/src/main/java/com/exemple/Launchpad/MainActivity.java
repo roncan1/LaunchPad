@@ -6,6 +6,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,12 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton button_drum, button_piano, button_guitar, button_1, button_2, button_3,
             button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12,
-            button_13, button_14, button_15;
+            button_13, button_14, button_15, button_left, button_right, button_up, button_down;
     String select = "drum"; // 악기 선택 변수
     int sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,
             sound13, sound14, sound15;
     SoundPool soundPool;
-    private Boolean easter_a = false, easter_b = false, easter_c = false, easter_d = false, easter_e = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         button_9 = (ImageButton)findViewById(R.id.button_9); button_10 = (ImageButton)findViewById(R.id.button_10);
         button_11 = (ImageButton)findViewById(R.id.button_11); button_12 = (ImageButton)findViewById(R.id.button_12);
         button_13 = (ImageButton)findViewById(R.id.button_13); button_14 = (ImageButton)findViewById(R.id.button_14);
-        button_15 = (ImageButton)findViewById(R.id.button_15);
+        button_15 = (ImageButton)findViewById(R.id.button_15); button_up = (ImageButton)findViewById(R.id.Button_up);
+        button_down = (ImageButton)findViewById(R.id.Button_down); button_left = (ImageButton)findViewById(R.id.Button_left);
+        button_right = (ImageButton)findViewById(R.id.Button_right);
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
 
         button_drum.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,34 @@ public class MainActivity extends AppCompatActivity {
                 select = "guitar";
                 cate_set(select);
             }});
+
+        button_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                action_up();
+            }
+        });
+
+        button_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                action_down();
+            }
+        });
+
+        button_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                action_left();
+            }
+        });
+
+        button_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                action_right();
+            }
+        });
 
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,6 +182,69 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void action_up() {
+        button_9.setImageResource(R.drawable.btn_orange);
+        button_10.setImageResource(R.drawable.btn_blue);
+        button_11.setImageResource(R.drawable.btn_purple);
+        button_12.setImageResource(R.drawable.btn_yellow);
+        button_15.setImageResource(R.drawable.btn_green);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //9 10 11 12 15
+                button_9.setImageResource(R.drawable.selector_orange);
+                button_10.setImageResource(R.drawable.selector_blue);
+                button_11.setImageResource(R.drawable.selector_purple);
+                button_12.setImageResource(R.drawable.selector_yellow);
+                button_15.setImageResource(R.drawable.selector_green);
+
+                button_5.setImageResource(R.drawable.btn_orange);
+                button_6.setImageResource(R.drawable.btn_blue);
+                button_7.setImageResource(R.drawable.btn_purple);
+                button_8.setImageResource(R.drawable.btn_yellow);
+                button_14.setImageResource(R.drawable.btn_green);
+            }
+        },200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //9 10 11 12 15
+                button_5.setImageResource(R.drawable.selector_orange);
+                button_6.setImageResource(R.drawable.selector_blue);
+                button_7.setImageResource(R.drawable.selector_purple);
+                button_8.setImageResource(R.drawable.selector_yellow);
+                button_14.setImageResource(R.drawable.selector_green);
+
+                button_1.setImageResource(R.drawable.btn_orange);
+                button_2.setImageResource(R.drawable.btn_blue);
+                button_3.setImageResource(R.drawable.btn_purple);
+                button_4.setImageResource(R.drawable.btn_yellow);
+                button_13.setImageResource(R.drawable.btn_green);
+            }
+        },400);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                button_1.setImageResource(R.drawable.selector_orange);
+                button_2.setImageResource(R.drawable.selector_blue);
+                button_3.setImageResource(R.drawable.selector_purple);
+                button_4.setImageResource(R.drawable.selector_yellow);
+                button_13.setImageResource(R.drawable.selector_green);
+            }
+        },600);
+
+    }
+
+    private void action_down() {
+    }
+
+    private void action_left() {
+    }
+
+    private void action_right() {
+    }
 
 
     private void cate_set(String select) {

@@ -4,6 +4,6 @@
     <item android:state_pressed="true" android:drawable="@drawable/btn_green">
     </item>
 
-    <item android:state_pressed="false" android:drawable="@drawable/brn_default">
+    <item android:state_pressed="false" android:drawable="@drawable/btn_default">
     </item>
 </selector>
