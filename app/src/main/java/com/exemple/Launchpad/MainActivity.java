@@ -4,6 +4,7 @@ package com.exemple.Launchpad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -21,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton button_drum, button_piano, button_guitar, button_1, button_2, button_3,
             button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12,
-            button_13, button_14, button_15, button_left, button_right, button_up, button_down;
+            button_13, button_14, button_15, button_left, button_right, button_up, button_down, button_popup;
     String select = "drum"; // 악기 선택 변수
     int sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,
             sound13, sound14, sound15;
     SoundPool soundPool;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         button_13 = (ImageButton)findViewById(R.id.button_13); button_14 = (ImageButton)findViewById(R.id.button_14);
         button_15 = (ImageButton)findViewById(R.id.button_15); button_up = (ImageButton)findViewById(R.id.Button_up);
         button_down = (ImageButton)findViewById(R.id.Button_down); button_left = (ImageButton)findViewById(R.id.Button_left);
-        button_right = (ImageButton)findViewById(R.id.Button_right);
+        button_right = (ImageButton)findViewById(R.id.Button_right); button_popup = (ImageButton)findViewById(R.id.button_popup);
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
 
 
@@ -91,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 action_right();
+            }
+        });
+
+        button_popup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PopupActivity.class);
+                startActivity(intent);
             }
         });
 
