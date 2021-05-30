@@ -85,7 +85,7 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_1"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -93,7 +93,7 @@
                 android:background="@drawable/selector_orange"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_2"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -103,7 +103,7 @@
                 android:background="@drawable/selector_blue"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_3"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -113,7 +113,7 @@
                 android:background="@drawable/selector_purple"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_4"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -122,7 +122,7 @@
                 android:background="@drawable/selector_yellow"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_13"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -142,7 +142,7 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_5"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -151,7 +151,7 @@
                 android:background="@drawable/selector_orange"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_6"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -161,7 +161,7 @@
                 android:background="@drawable/selector_blue"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_7"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -171,7 +171,7 @@
                 android:background="@drawable/selector_purple"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_8"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -180,7 +180,7 @@
                 android:background="@drawable/selector_yellow"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_14"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -200,7 +200,7 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_9"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -208,7 +208,7 @@
                 android:background="@drawable/selector_orange"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_10"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -218,7 +218,7 @@
                 android:background="@drawable/selector_blue"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_11"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -228,7 +228,7 @@
                 android:background="@drawable/selector_purple"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_12"
                 android:layout_width="180dp"
                 android:layout_height="165dp"
@@ -237,7 +237,7 @@
                 android:background="@drawable/selector_yellow"
                 android:soundEffectsEnabled="false" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_15"
                 android:layout_width="180dp"
                 android:layout_height="165dp"

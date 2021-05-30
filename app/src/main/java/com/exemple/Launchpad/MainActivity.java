@@ -20,11 +20,14 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton button_drum, button_piano, button_guitar, button_1, button_2, button_3,
-            button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12,
-            button_13, button_14, button_15, button_left, button_right, button_up, button_down, button_popup;
+    ImageButton button_drum, button_piano, button_guitar, button_left,
+            button_right, button_up, button_down, button_popup;
+    Button button_1, button_2, button_3, button_4, button_5, button_6,
+            button_7, button_8, button_9, button_10, button_11, button_12,
+            button_13, button_14, button_15;
     String select = "drum"; // 악기 선택 변수
-    int sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,
+    int sound1, sound2, sound3, sound4, sound5, sound6, sound7,
+            sound8, sound9, sound10, sound11, sound12,
             sound13, sound14, sound15;
     SoundPool soundPool;
 
@@ -36,18 +39,18 @@ public class MainActivity extends AppCompatActivity {
         button_drum = (ImageButton)findViewById(R.id.Button_drum);
         button_piano = (ImageButton)findViewById(R.id.Button_piano);
         button_guitar = (ImageButton)findViewById(R.id.Button_guitar);
-        button_1 = (ImageButton)findViewById(R.id.button_1); button_2 = (ImageButton)findViewById(R.id.button_2);
-        button_3 = (ImageButton)findViewById(R.id.button_3); button_4 = (ImageButton)findViewById(R.id.button_4);
-        button_5 = (ImageButton)findViewById(R.id.button_5); button_6 = (ImageButton)findViewById(R.id.button_6);
-        button_7 = (ImageButton)findViewById(R.id.button_7); button_8 = (ImageButton)findViewById(R.id.button_8);
-        button_9 = (ImageButton)findViewById(R.id.button_9); button_10 = (ImageButton)findViewById(R.id.button_10);
-        button_11 = (ImageButton)findViewById(R.id.button_11); button_12 = (ImageButton)findViewById(R.id.button_12);
-        button_13 = (ImageButton)findViewById(R.id.button_13); button_14 = (ImageButton)findViewById(R.id.button_14);
-        button_15 = (ImageButton)findViewById(R.id.button_15); button_up = (ImageButton)findViewById(R.id.Button_up);
+        button_1 = (Button)findViewById(R.id.button_1); button_2 = (Button)findViewById(R.id.button_2);
+        button_3 = (Button)findViewById(R.id.button_3); button_4 = (Button)findViewById(R.id.button_4);
+        button_5 = (Button)findViewById(R.id.button_5); button_6 = (Button)findViewById(R.id.button_6);
+        button_7 = (Button)findViewById(R.id.button_7); button_8 = (Button)findViewById(R.id.button_8);
+        button_9 = (Button)findViewById(R.id.button_9); button_10 = (Button)findViewById(R.id.button_10);
+        button_11 = (Button)findViewById(R.id.button_11); button_12 = (Button)findViewById(R.id.button_12);
+        button_13 = (Button)findViewById(R.id.button_13); button_14 = (Button)findViewById(R.id.button_14);
+        button_15 = (Button)findViewById(R.id.button_15); button_up = (ImageButton)findViewById(R.id.Button_up);
         button_down = (ImageButton)findViewById(R.id.Button_down); button_left = (ImageButton)findViewById(R.id.Button_left);
         button_right = (ImageButton)findViewById(R.id.Button_right); button_popup = (ImageButton)findViewById(R.id.button_popup);
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
-
+        defultset();
 
         button_drum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,27 +201,45 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void defultset() {
+        sound1 = soundPool.load(this, R.raw.drum_base, 0);
+        sound2 = soundPool.load(this, R.raw.drum_crash, 0);
+        sound3 = soundPool.load(this, R.raw.drum_hihat, 0);
+        sound4 = soundPool.load(this, R.raw.drum_ride, 0);
+        sound5 = soundPool.load(this, R.raw.drum_1, 0);
+        sound6 = soundPool.load(this, R.raw.drum_2, 0);
+        sound7 = soundPool.load(this, R.raw.drum_stick, 0);
+        sound8 = soundPool.load(this, R.raw.drum_3, 0);
+        sound9 = soundPool.load(this, R.raw.drum_4, 0);
+        sound10 = soundPool.load(this, R.raw.drum_5, 0);
+        sound11 = soundPool.load(this, R.raw.drum_6, 0);
+        sound12 = soundPool.load(this, R.raw.drum_7, 0);
+        sound13 = soundPool.load(this, R.raw.drum_8, 0);
+        sound14 = soundPool.load(this, R.raw.drum_9, 0);
+        sound15 = soundPool.load(this, R.raw.drum_10, 0);
+    }
+
     private void action_up() {
-        button_9.setImageResource(R.drawable.btn_orange);
-        button_10.setImageResource(R.drawable.btn_blue);
-        button_11.setImageResource(R.drawable.btn_purple);
-        button_12.setImageResource(R.drawable.btn_yellow);
-        button_15.setImageResource(R.drawable.btn_green);
+        button_9.setBackgroundResource(R.drawable.btn_orange);
+        button_10.setBackgroundResource(R.drawable.btn_blue);
+        button_11.setBackgroundResource(R.drawable.btn_purple);
+        button_12.setBackgroundResource(R.drawable.btn_yellow);
+        button_15.setBackgroundResource(R.drawable.btn_green);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_9.setImageResource(R.drawable.selector_orange);
-                button_10.setImageResource(R.drawable.selector_blue);
-                button_11.setImageResource(R.drawable.selector_purple);
-                button_12.setImageResource(R.drawable.selector_yellow);
-                button_15.setImageResource(R.drawable.selector_green);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_15.setBackgroundResource(R.drawable.selector_green);
 
-                button_5.setImageResource(R.drawable.btn_orange);
-                button_6.setImageResource(R.drawable.btn_blue);
-                button_7.setImageResource(R.drawable.btn_purple);
-                button_8.setImageResource(R.drawable.btn_yellow);
-                button_14.setImageResource(R.drawable.btn_green);
+                button_5.setBackgroundResource(R.drawable.btn_orange);
+                button_6.setBackgroundResource(R.drawable.btn_blue);
+                button_7.setBackgroundResource(R.drawable.btn_purple);
+                button_8.setBackgroundResource(R.drawable.btn_yellow);
+                button_14.setBackgroundResource(R.drawable.btn_green);
             }
         },100);
 
@@ -226,54 +247,54 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_5.setImageResource(R.drawable.selector_orange);
-                button_6.setImageResource(R.drawable.selector_blue);
-                button_7.setImageResource(R.drawable.selector_purple);
-                button_8.setImageResource(R.drawable.selector_yellow);
-                button_14.setImageResource(R.drawable.selector_green);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_14.setBackgroundResource(R.drawable.selector_green);
 
-                button_1.setImageResource(R.drawable.btn_orange);
-                button_2.setImageResource(R.drawable.btn_blue);
-                button_3.setImageResource(R.drawable.btn_purple);
-                button_4.setImageResource(R.drawable.btn_yellow);
-                button_13.setImageResource(R.drawable.btn_green);
+                button_1.setBackgroundResource(R.drawable.btn_orange);
+                button_2.setBackgroundResource(R.drawable.btn_blue);
+                button_3.setBackgroundResource(R.drawable.btn_purple);
+                button_4.setBackgroundResource(R.drawable.btn_yellow);
+                button_13.setBackgroundResource(R.drawable.btn_green);
             }
         },200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_1.setImageResource(R.drawable.selector_orange);
-                button_2.setImageResource(R.drawable.selector_blue);
-                button_3.setImageResource(R.drawable.selector_purple);
-                button_4.setImageResource(R.drawable.selector_yellow);
-                button_13.setImageResource(R.drawable.selector_green);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_13.setBackgroundResource(R.drawable.selector_green);
             }
         },300);
 
     }
 
     private void action_down() {
-        button_1.setImageResource(R.drawable.btn_orange);
-        button_2.setImageResource(R.drawable.btn_blue);
-        button_3.setImageResource(R.drawable.btn_purple);
-        button_4.setImageResource(R.drawable.btn_yellow);
-        button_13.setImageResource(R.drawable.btn_green);
+        button_1.setBackgroundResource(R.drawable.btn_orange);
+        button_2.setBackgroundResource(R.drawable.btn_blue);
+        button_3.setBackgroundResource(R.drawable.btn_purple);
+        button_4.setBackgroundResource(R.drawable.btn_yellow);
+        button_13.setBackgroundResource(R.drawable.btn_green);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_1.setImageResource(R.drawable.selector_orange);
-                button_2.setImageResource(R.drawable.selector_blue);
-                button_3.setImageResource(R.drawable.selector_purple);
-                button_4.setImageResource(R.drawable.selector_yellow);
-                button_13.setImageResource(R.drawable.selector_green);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_13.setBackgroundResource(R.drawable.selector_green);
 
-                button_5.setImageResource(R.drawable.btn_orange);
-                button_6.setImageResource(R.drawable.btn_blue);
-                button_7.setImageResource(R.drawable.btn_purple);
-                button_8.setImageResource(R.drawable.btn_yellow);
-                button_14.setImageResource(R.drawable.btn_green);
+                button_5.setBackgroundResource(R.drawable.btn_orange);
+                button_6.setBackgroundResource(R.drawable.btn_blue);
+                button_7.setBackgroundResource(R.drawable.btn_purple);
+                button_8.setBackgroundResource(R.drawable.btn_yellow);
+                button_14.setBackgroundResource(R.drawable.btn_green);
             }
         },100);
 
@@ -281,47 +302,47 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_5.setImageResource(R.drawable.selector_orange);
-                button_6.setImageResource(R.drawable.selector_blue);
-                button_7.setImageResource(R.drawable.selector_purple);
-                button_8.setImageResource(R.drawable.selector_yellow);
-                button_14.setImageResource(R.drawable.selector_green);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_14.setBackgroundResource(R.drawable.selector_green);
 
-                button_9.setImageResource(R.drawable.btn_orange);
-                button_10.setImageResource(R.drawable.btn_blue);
-                button_11.setImageResource(R.drawable.btn_purple);
-                button_12.setImageResource(R.drawable.btn_yellow);
-                button_15.setImageResource(R.drawable.btn_green);
+                button_9.setBackgroundResource(R.drawable.btn_orange);
+                button_10.setBackgroundResource(R.drawable.btn_blue);
+                button_11.setBackgroundResource(R.drawable.btn_purple);
+                button_12.setBackgroundResource(R.drawable.btn_yellow);
+                button_15.setBackgroundResource(R.drawable.btn_green);
             }
         },200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_9.setImageResource(R.drawable.selector_orange);
-                button_10.setImageResource(R.drawable.selector_blue);
-                button_11.setImageResource(R.drawable.selector_purple);
-                button_12.setImageResource(R.drawable.selector_yellow);
-                button_15.setImageResource(R.drawable.selector_green);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_15.setBackgroundResource(R.drawable.selector_green);
             }
         },300);
     }
 
     private void action_right() {
-        button_1.setImageResource(R.drawable.btn_orange);
-        button_5.setImageResource(R.drawable.btn_orange);
-        button_9.setImageResource(R.drawable.btn_orange);
+        button_1.setBackgroundResource(R.drawable.btn_orange);
+        button_5.setBackgroundResource(R.drawable.btn_orange);
+        button_9.setBackgroundResource(R.drawable.btn_orange);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_1.setImageResource(R.drawable.selector_orange);
-                button_5.setImageResource(R.drawable.selector_orange);
-                button_9.setImageResource(R.drawable.selector_orange);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
 
-                button_2.setImageResource(R.drawable.btn_blue);
-                button_6.setImageResource(R.drawable.btn_blue);
-                button_10.setImageResource(R.drawable.btn_blue);
+                button_2.setBackgroundResource(R.drawable.btn_blue);
+                button_6.setBackgroundResource(R.drawable.btn_blue);
+                button_10.setBackgroundResource(R.drawable.btn_blue);
             }
         },100);
 
@@ -329,67 +350,67 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_2.setImageResource(R.drawable.selector_blue);
-                button_6.setImageResource(R.drawable.selector_blue);
-                button_10.setImageResource(R.drawable.selector_blue);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
 
-                button_3.setImageResource(R.drawable.btn_purple);
-                button_7.setImageResource(R.drawable.btn_purple);
-                button_11.setImageResource(R.drawable.btn_purple);
+                button_3.setBackgroundResource(R.drawable.btn_purple);
+                button_7.setBackgroundResource(R.drawable.btn_purple);
+                button_11.setBackgroundResource(R.drawable.btn_purple);
             }
         },200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_3.setImageResource(R.drawable.selector_purple);
-                button_7.setImageResource(R.drawable.selector_purple);
-                button_11.setImageResource(R.drawable.selector_purple);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
 
-                button_4.setImageResource(R.drawable.btn_yellow);
-                button_8.setImageResource(R.drawable.btn_yellow);
-                button_12.setImageResource(R.drawable.btn_yellow);
+                button_4.setBackgroundResource(R.drawable.btn_yellow);
+                button_8.setBackgroundResource(R.drawable.btn_yellow);
+                button_12.setBackgroundResource(R.drawable.btn_yellow);
             }
         },300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_4.setImageResource(R.drawable.selector_yellow);
-                button_8.setImageResource(R.drawable.selector_yellow);
-                button_12.setImageResource(R.drawable.selector_yellow);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
 
-                button_13.setImageResource(R.drawable.btn_green);
-                button_14.setImageResource(R.drawable.btn_green);
-                button_15.setImageResource(R.drawable.btn_green);
+                button_13.setBackgroundResource(R.drawable.btn_green);
+                button_14.setBackgroundResource(R.drawable.btn_green);
+                button_15.setBackgroundResource(R.drawable.btn_green);
             }
         },400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_13.setImageResource(R.drawable.selector_green);
-                button_14.setImageResource(R.drawable.selector_green);
-                button_15.setImageResource(R.drawable.selector_green);
+                button_13.setBackgroundResource(R.drawable.selector_green);
+                button_14.setBackgroundResource(R.drawable.selector_green);
+                button_15.setBackgroundResource(R.drawable.selector_green);
             }
         },500);
     }
 
     private void action_left() {
-        button_13.setImageResource(R.drawable.btn_green);
-        button_14.setImageResource(R.drawable.btn_green);
-        button_15.setImageResource(R.drawable.btn_green);
+        button_13.setBackgroundResource(R.drawable.btn_green);
+        button_14.setBackgroundResource(R.drawable.btn_green);
+        button_15.setBackgroundResource(R.drawable.btn_green);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_13.setImageResource(R.drawable.selector_green);
-                button_14.setImageResource(R.drawable.selector_green);
-                button_15.setImageResource(R.drawable.selector_green);
+                button_13.setBackgroundResource(R.drawable.selector_green);
+                button_14.setBackgroundResource(R.drawable.selector_green);
+                button_15.setBackgroundResource(R.drawable.selector_green);
 
-                button_4.setImageResource(R.drawable.btn_yellow);
-                button_8.setImageResource(R.drawable.btn_yellow);
-                button_12.setImageResource(R.drawable.btn_yellow);
+                button_4.setBackgroundResource(R.drawable.btn_yellow);
+                button_8.setBackgroundResource(R.drawable.btn_yellow);
+                button_12.setBackgroundResource(R.drawable.btn_yellow);
             }
         },100);
 
@@ -397,48 +418,48 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_4.setImageResource(R.drawable.selector_yellow);
-                button_8.setImageResource(R.drawable.selector_yellow);
-                button_12.setImageResource(R.drawable.selector_yellow);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
 
-                button_3.setImageResource(R.drawable.btn_purple);
-                button_7.setImageResource(R.drawable.btn_purple);
-                button_11.setImageResource(R.drawable.btn_purple);
+                button_3.setBackgroundResource(R.drawable.btn_purple);
+                button_7.setBackgroundResource(R.drawable.btn_purple);
+                button_11.setBackgroundResource(R.drawable.btn_purple);
             }
         },200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_3.setImageResource(R.drawable.selector_purple);
-                button_7.setImageResource(R.drawable.selector_purple);
-                button_11.setImageResource(R.drawable.selector_purple);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
 
-                button_2.setImageResource(R.drawable.btn_blue);
-                button_6.setImageResource(R.drawable.btn_blue);
-                button_10.setImageResource(R.drawable.btn_blue);
+                button_2.setBackgroundResource(R.drawable.btn_blue);
+                button_6.setBackgroundResource(R.drawable.btn_blue);
+                button_10.setBackgroundResource(R.drawable.btn_blue);
             }
         },300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_2.setImageResource(R.drawable.selector_blue);
-                button_6.setImageResource(R.drawable.selector_blue);
-                button_10.setImageResource(R.drawable.selector_blue);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
 
-                button_1.setImageResource(R.drawable.btn_orange);
-                button_5.setImageResource(R.drawable.btn_orange);
-                button_9.setImageResource(R.drawable.btn_orange);
+                button_1.setBackgroundResource(R.drawable.btn_orange);
+                button_5.setBackgroundResource(R.drawable.btn_orange);
+                button_9.setBackgroundResource(R.drawable.btn_orange);
             }
         },400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_1.setImageResource(R.drawable.selector_orange);
-                button_5.setImageResource(R.drawable.selector_orange);
-                button_9.setImageResource(R.drawable.selector_orange);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
             }
         },500);
     }
