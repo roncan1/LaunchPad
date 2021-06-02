@@ -18,10 +18,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PopupActivity"
-            android:theme="@style/Theme.AppCompat.Dialog">
-
-        </activity>
     </application>
 
 </manifest>

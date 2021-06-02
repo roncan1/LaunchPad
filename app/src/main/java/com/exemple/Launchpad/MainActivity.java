@@ -16,19 +16,23 @@ import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton button_drum, button_piano, button_guitar, button_left,
-            button_right, button_up, button_down, button_popup;
-    Button button_1, button_2, button_3, button_4, button_5, button_6,
+            button_right, button_up, button_down;
+    ToggleButton button_effect;
+    public static Button button_1, button_2, button_3, button_4, button_5, button_6,
             button_7, button_8, button_9, button_10, button_11, button_12,
             button_13, button_14, button_15;
     String select = "drum"; // 악기 선택 변수
     int sound1, sound2, sound3, sound4, sound5, sound6, sound7,
             sound8, sound9, sound10, sound11, sound12,
             sound13, sound14, sound15;
+    Boolean effect = false;
     SoundPool soundPool;
 
 
@@ -48,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
         button_13 = (Button)findViewById(R.id.button_13); button_14 = (Button)findViewById(R.id.button_14);
         button_15 = (Button)findViewById(R.id.button_15); button_up = (ImageButton)findViewById(R.id.Button_up);
         button_down = (ImageButton)findViewById(R.id.Button_down); button_left = (ImageButton)findViewById(R.id.Button_left);
-        button_right = (ImageButton)findViewById(R.id.Button_right); button_popup = (ImageButton)findViewById(R.id.button_popup);
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
-        defultset();
+        button_right = (ImageButton)findViewById(R.id.Button_right); button_effect = (ToggleButton) findViewById(R.id.button_effect);
+        soundPool = new SoundPool(15, AudioManager.STREAM_MUSIC,0);
+
+        Button_Touch_effect bte = new Button_Touch_effect();
+        defaultset();
 
         button_drum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,33 +83,32 @@ public class MainActivity extends AppCompatActivity {
                 action_up();
             }
         });
-
         button_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 action_down();
             }
         });
-
         button_left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 action_left();
             }
         });
-
         button_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 action_right();
             }
         });
-
-        button_popup.setOnClickListener(new View.OnClickListener() {
+        button_effect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PopupActivity.class);
-                startActivity(intent);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    effect = true;
+                } else {
+                    effect = false;
+                }
             }
         });
 
@@ -111,12 +116,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound1,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_1();
             }
         });
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound2,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2();
             }
         });
         button_3.setOnClickListener(new View.OnClickListener() {
@@ -201,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void defultset() {
+    private void defaultset() {
         sound1 = soundPool.load(this, R.raw.drum_base, 0);
         sound2 = soundPool.load(this, R.raw.drum_crash, 0);
         sound3 = soundPool.load(this, R.raw.drum_hihat, 0);
@@ -228,13 +235,6 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //9 10 11 12 15
-                button_9.setBackgroundResource(R.drawable.selector_orange);
-                button_10.setBackgroundResource(R.drawable.selector_blue);
-                button_11.setBackgroundResource(R.drawable.selector_purple);
-                button_12.setBackgroundResource(R.drawable.selector_yellow);
-                button_15.setBackgroundResource(R.drawable.selector_green);
-
                 button_5.setBackgroundResource(R.drawable.btn_orange);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
@@ -247,12 +247,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_5.setBackgroundResource(R.drawable.selector_orange);
-                button_6.setBackgroundResource(R.drawable.selector_blue);
-                button_7.setBackgroundResource(R.drawable.selector_purple);
-                button_8.setBackgroundResource(R.drawable.selector_yellow);
-                button_14.setBackgroundResource(R.drawable.selector_green);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_15.setBackgroundResource(R.drawable.selector_green);
+            }
+        },120);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_1.setBackgroundResource(R.drawable.btn_orange);
                 button_2.setBackgroundResource(R.drawable.btn_blue);
                 button_3.setBackgroundResource(R.drawable.btn_purple);
@@ -260,6 +265,18 @@ public class MainActivity extends AppCompatActivity {
                 button_13.setBackgroundResource(R.drawable.btn_green);
             }
         },200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //9 10 11 12 15
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_14.setBackgroundResource(R.drawable.selector_green);
+            }
+        },220);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -283,13 +300,6 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //9 10 11 12 15
-                button_1.setBackgroundResource(R.drawable.selector_orange);
-                button_2.setBackgroundResource(R.drawable.selector_blue);
-                button_3.setBackgroundResource(R.drawable.selector_purple);
-                button_4.setBackgroundResource(R.drawable.selector_yellow);
-                button_13.setBackgroundResource(R.drawable.selector_green);
-
                 button_5.setBackgroundResource(R.drawable.btn_orange);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
@@ -302,12 +312,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_5.setBackgroundResource(R.drawable.selector_orange);
-                button_6.setBackgroundResource(R.drawable.selector_blue);
-                button_7.setBackgroundResource(R.drawable.selector_purple);
-                button_8.setBackgroundResource(R.drawable.selector_yellow);
-                button_14.setBackgroundResource(R.drawable.selector_green);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_13.setBackgroundResource(R.drawable.selector_green);
+            }
+        },120);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_9.setBackgroundResource(R.drawable.btn_orange);
                 button_10.setBackgroundResource(R.drawable.btn_blue);
                 button_11.setBackgroundResource(R.drawable.btn_purple);
@@ -315,6 +330,18 @@ public class MainActivity extends AppCompatActivity {
                 button_15.setBackgroundResource(R.drawable.btn_green);
             }
         },200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //9 10 11 12 15
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_14.setBackgroundResource(R.drawable.selector_green);
+            }
+        },220);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -336,10 +363,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_1.setBackgroundResource(R.drawable.selector_orange);
-                button_5.setBackgroundResource(R.drawable.selector_orange);
-                button_9.setBackgroundResource(R.drawable.selector_orange);
-
                 button_2.setBackgroundResource(R.drawable.btn_blue);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_10.setBackgroundResource(R.drawable.btn_blue);
@@ -350,10 +373,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_2.setBackgroundResource(R.drawable.selector_blue);
-                button_6.setBackgroundResource(R.drawable.selector_blue);
-                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+            }
+        },120);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //9 10 11 12 15
                 button_3.setBackgroundResource(R.drawable.btn_purple);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
                 button_11.setBackgroundResource(R.drawable.btn_purple);
@@ -363,10 +392,16 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_3.setBackgroundResource(R.drawable.selector_purple);
-                button_7.setBackgroundResource(R.drawable.selector_purple);
-                button_11.setBackgroundResource(R.drawable.selector_purple);
+                //9 10 11 12 15
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+            }
+        },220);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_4.setBackgroundResource(R.drawable.btn_yellow);
                 button_8.setBackgroundResource(R.drawable.btn_yellow);
                 button_12.setBackgroundResource(R.drawable.btn_yellow);
@@ -376,10 +411,15 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_4.setBackgroundResource(R.drawable.selector_yellow);
-                button_8.setBackgroundResource(R.drawable.selector_yellow);
-                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+            }
+        },320);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_13.setBackgroundResource(R.drawable.btn_green);
                 button_14.setBackgroundResource(R.drawable.btn_green);
                 button_15.setBackgroundResource(R.drawable.btn_green);
@@ -389,11 +429,21 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+            }
+        },420);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_13.setBackgroundResource(R.drawable.selector_green);
                 button_14.setBackgroundResource(R.drawable.selector_green);
                 button_15.setBackgroundResource(R.drawable.selector_green);
             }
         },500);
+
     }
 
     private void action_left() {
@@ -403,11 +453,6 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //9 10 11 12 15
-                button_13.setBackgroundResource(R.drawable.selector_green);
-                button_14.setBackgroundResource(R.drawable.selector_green);
-                button_15.setBackgroundResource(R.drawable.selector_green);
-
                 button_4.setBackgroundResource(R.drawable.btn_yellow);
                 button_8.setBackgroundResource(R.drawable.btn_yellow);
                 button_12.setBackgroundResource(R.drawable.btn_yellow);
@@ -418,10 +463,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
-                button_4.setBackgroundResource(R.drawable.selector_yellow);
-                button_8.setBackgroundResource(R.drawable.selector_yellow);
-                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_13.setBackgroundResource(R.drawable.selector_green);
+                button_14.setBackgroundResource(R.drawable.selector_green);
+                button_15.setBackgroundResource(R.drawable.selector_green);
+            }
+        },120);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_3.setBackgroundResource(R.drawable.btn_purple);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
                 button_11.setBackgroundResource(R.drawable.btn_purple);
@@ -431,10 +481,16 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_3.setBackgroundResource(R.drawable.selector_purple);
-                button_7.setBackgroundResource(R.drawable.selector_purple);
-                button_11.setBackgroundResource(R.drawable.selector_purple);
+                //9 10 11 12 15
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_8.setBackgroundResource(R.drawable.selector_yellow);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+            }
+        },220);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_2.setBackgroundResource(R.drawable.btn_blue);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_10.setBackgroundResource(R.drawable.btn_blue);
@@ -444,15 +500,29 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                button_2.setBackgroundResource(R.drawable.selector_blue);
-                button_6.setBackgroundResource(R.drawable.selector_blue);
-                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_7.setBackgroundResource(R.drawable.selector_purple);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+            }
+        },320);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 button_1.setBackgroundResource(R.drawable.btn_orange);
                 button_5.setBackgroundResource(R.drawable.btn_orange);
                 button_9.setBackgroundResource(R.drawable.btn_orange);
             }
         },400);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_6.setBackgroundResource(R.drawable.selector_blue);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+            }
+        },420);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -523,4 +593,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
