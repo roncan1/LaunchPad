@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound3,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3();
             }
         });
         button_4.setOnClickListener(new View.OnClickListener() {
