@@ -116,93 +116,105 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound1,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1();
+                if (effect == true) bte.btn_1_1();
             }
         });
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound2,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2();
+                if (effect == true) bte.btn_1_2();
             }
         });
         button_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound3,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3();
+                if (effect == true) bte.btn_1_3();
             }
         });
         button_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound4,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_1_4();
             }
         });
         button_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound5,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2_1();
             }
         });
         button_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound6,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2_2();
             }
         });
         button_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound7,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2_3();
             }
         });
         button_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound8,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2_4();
             }
         });
         button_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound9,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3_1();
             }
         });
         button_10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound10,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3_2();
             }
         });
         button_11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound11,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3_3();
             }
         });
         button_12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound12,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3_4();
             }
         });
         button_13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound13,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_1_5();
             }
         });
         button_14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound14,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_2_5();
             }
         });
         button_15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 soundPool.play(sound15,1f,1f,0,0,1f);
+                if (effect == true) bte.btn_3_5();
             }
         });
 
