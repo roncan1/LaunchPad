@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -112,112 +113,216 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_1.setOnClickListener(new View.OnClickListener() {
+        button_1.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound1,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1_1();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound1,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_1_1();
+                        break;
+                }
+                return false;
             }
         });
-        button_2.setOnClickListener(new View.OnClickListener() {
+        button_2.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound2,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1_2();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound2,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_1_2();
+                        break;
+                }
+                return false;
             }
         });
-        button_3.setOnClickListener(new View.OnClickListener() {
+        button_3.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound3,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1_3();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound3,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_1_3();
+                        break;
+                }
+                return false;
             }
         });
-        button_4.setOnClickListener(new View.OnClickListener() {
+        button_4.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound4,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1_4();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound4,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_1_4();
+                        break;
+                }
+                return false;
             }
         });
-        button_5.setOnClickListener(new View.OnClickListener() {
+        button_5.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound5,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2_1();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound5,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_2_1();
+                        break;
+                }
+                return false;
             }
         });
-        button_6.setOnClickListener(new View.OnClickListener() {
+        button_6.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound6,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2_2();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound6,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_2_2();
+                        break;
+                }
+                return false;
             }
         });
-        button_7.setOnClickListener(new View.OnClickListener() {
+        button_7.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound7,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2_3();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound7,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_2_3();
+                        break;
+                }
+                return false;
             }
         });
-        button_8.setOnClickListener(new View.OnClickListener() {
+        button_8.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound8,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2_4();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound8,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_2_4();
+                        break;
+                }
+                return false;
             }
         });
-        button_9.setOnClickListener(new View.OnClickListener() {
+        button_9.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound9,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3_1();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound9,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_3_1();
+                        break;
+                }
+                return false;
             }
         });
-        button_10.setOnClickListener(new View.OnClickListener() {
+        button_10.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound10,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3_2();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound10,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_3_2();
+                        break;
+                }
+                return false;
             }
         });
-        button_11.setOnClickListener(new View.OnClickListener() {
+        button_11.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound11,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3_3();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound11,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_3_3();
+                        break;
+                }
+                return false;
             }
         });
-        button_12.setOnClickListener(new View.OnClickListener() {
+        button_12.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound12,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3_4();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound12,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_3_4();
+                        break;
+                }
+                return false;
             }
         });
-        button_13.setOnClickListener(new View.OnClickListener() {
+        button_13.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound13,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_1_5();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound13,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_1_5();
+                        break;
+                }
+                return false;
             }
         });
-        button_14.setOnClickListener(new View.OnClickListener() {
+        button_14.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound14,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_2_5();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound14,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_2_5();
+                        break;
+                }
+                return false;
             }
         });
-        button_15.setOnClickListener(new View.OnClickListener() {
+        button_15.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                soundPool.play(sound15,1f,1f,0,0,1f);
-                if (effect == true) bte.btn_3_5();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        soundPool.play(sound15,1f,1f,0,0,1f);
+                        break;
+                    case MotionEvent.ACTION_UP :
+                        if (effect == true) bte.btn_3_5();
+                        break;
+                }
+                return false;
             }
         });
-
 
     }
 

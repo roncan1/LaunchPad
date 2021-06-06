@@ -813,7 +813,7 @@ public class Button_Touch_effect {
             public void run() {
                 //9 10 11 12 15
                 ma.button_9.setBackgroundResource(R.drawable.btn_blue);
-                ma.button_3.setBackgroundResource(R.drawable.btn_blue);
+                ma.button_7.setBackgroundResource(R.drawable.btn_blue);
                 ma.button_5.setBackgroundResource(R.drawable.btn_blue);
                 ma.button_6.setBackgroundResource(R.drawable.btn_blue);
                 ma.button_11.setBackgroundResource(R.drawable.btn_blue);
@@ -836,7 +836,7 @@ public class Button_Touch_effect {
             @Override
             public void run() {
                 ma.button_9.setBackgroundResource(R.drawable.selector_orange);
-                ma.button_3.setBackgroundResource(R.drawable.selector_purple);
+                ma.button_7.setBackgroundResource(R.drawable.selector_purple);
                 ma.button_5.setBackgroundResource(R.drawable.selector_orange);
                 ma.button_6.setBackgroundResource(R.drawable.selector_blue);
                 ma.button_11.setBackgroundResource(R.drawable.selector_purple);
@@ -1084,5 +1084,7 @@ public class Button_Touch_effect {
         },220);
 
     }
+
+
 
 }
