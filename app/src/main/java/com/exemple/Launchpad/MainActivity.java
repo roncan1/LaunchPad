@@ -353,6 +353,13 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                //9 10 11 12 15
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+                button_10.setBackgroundResource(R.drawable.selector_blue);
+                button_11.setBackgroundResource(R.drawable.selector_purple);
+                button_12.setBackgroundResource(R.drawable.selector_yellow);
+                button_15.setBackgroundResource(R.drawable.selector_green);
+
                 button_5.setBackgroundResource(R.drawable.btn_orange);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
@@ -418,6 +425,13 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                //9 10 11 12 15
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_2.setBackgroundResource(R.drawable.selector_blue);
+                button_3.setBackgroundResource(R.drawable.selector_purple);
+                button_4.setBackgroundResource(R.drawable.selector_yellow);
+                button_13.setBackgroundResource(R.drawable.selector_green);
+
                 button_5.setBackgroundResource(R.drawable.btn_orange);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_7.setBackgroundResource(R.drawable.btn_purple);
@@ -481,6 +495,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //9 10 11 12 15
+                button_1.setBackgroundResource(R.drawable.selector_orange);
+                button_5.setBackgroundResource(R.drawable.selector_orange);
+                button_9.setBackgroundResource(R.drawable.selector_orange);
+
                 button_2.setBackgroundResource(R.drawable.btn_blue);
                 button_6.setBackgroundResource(R.drawable.btn_blue);
                 button_10.setBackgroundResource(R.drawable.btn_blue);
@@ -711,8 +729,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
