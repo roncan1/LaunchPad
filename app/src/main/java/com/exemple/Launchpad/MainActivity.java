@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         button_right = (ImageButton)findViewById(R.id.Button_right); button_effect = (ToggleButton) findViewById(R.id.button_effect);
         soundPool = new SoundPool(15, AudioManager.STREAM_MUSIC,0);
         Button_Touch_effect bte = new Button_Touch_effect();
-        defaultset();
+        defaultSet();
 
         button_drum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void defaultset() {
+    private void defaultSet() {
         sound1 = soundPool.load(this, R.raw.drum_base, 0);
         sound2 = soundPool.load(this, R.raw.drum_crash, 0);
         sound3 = soundPool.load(this, R.raw.drum_hihat, 0);
